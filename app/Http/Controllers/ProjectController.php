@@ -91,4 +91,9 @@ class ProjectController extends Controller
         return view('/vistas/resultados_estudiante');
     }
 
+    public function info()
+    {
+        return view('/vistas/info');
+    }
+
 }

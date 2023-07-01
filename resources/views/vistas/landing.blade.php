@@ -28,12 +28,12 @@
     <div class="container">
     <header>
         <img src="images/Logo - copia.png" alt="">
-        <a href="landing.html" class="logo">Space Quiz</a>
+        <a href="{{ url('/') }}" class="logo">Space Quiz</a>
 
         <ul class="navlist">
-            <li><a href="info.html">Más Información</a></li>
-            <li><a href="jugar.html">¿Cómo jugar?</a></li>
-            <li><a href="registro_tipo.html">Registrar</a></li>
+            <li><a href="{{ url('/info') }}">Más Información</a></li>
+            <li><a href="{{ url('/jugar') }}">¿Cómo jugar?</a></li>
+            <li><a href="{{ url('/registro_tipo') }}">Registrar</a></li>
 
 
 
