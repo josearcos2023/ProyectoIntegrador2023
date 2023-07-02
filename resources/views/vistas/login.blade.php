@@ -44,18 +44,13 @@
                         <a href="{{ url('/login') }}" class="nav_link">
                             <p class="nav_text"> Iniciar sesión </p>
                         </a>
-
-                        <p class="nav_text">/</p>
-                        
+                        <p class="nav_text">/</p>      
                         <a href="{{ url('/registro_tipo') }}" class="nav_link">
                             <p class="nav_text">Registrarse<p>
-                        </a>
-                    
+                        </a>  
                 </div>
                 <!--Div de registrarse-->
-
             </div>
-
         </div>
 
         <!--sección principal-->
@@ -97,7 +92,7 @@
                         <!--Div del formulario de login-->
                         <div class="h-75">
                             <!--Formulario de login-->
-                            <form action="">
+                            <form action="" method="POST">
                                 <div class="login_div_input">
                                     <input type="text" placeholder="Usuario" class="input_login form-control">
                                 </div>
@@ -105,7 +100,7 @@
                                     <input type="text" placeholder="Contraseña" class="input_login form-control">
                                 </div>
                                 <div class="text-center login_div_input">
-                                    <a href="comiteMenu.html"><input type="button" value="Ingresar" class="login_btn"></a>
+                                    <a href="{{ url('/') }}"><input type="button" value="Ingresar" class="login_btn"></a>
                                 </div>
                             </form>
                         </div>
