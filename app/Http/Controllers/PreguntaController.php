@@ -14,22 +14,18 @@ class PreguntaController extends Controller
      */
     public function indexpreguntas(): View
     {
+        $respuestas = Respuesta::pluck('id_respuesta','respuesta');
         $preguntas = Pregunta::all();
-        $respuestas = Respuesta::pluck('respuesta','id_respuesta');
         return view('vistas.comiteListado',compact('preguntas','respuestas'));
     }
-    // public function indexrespuestas(): View
-    // {
-    //     $respuestas = Respuesta::all();
-    //     return view('vistas.comiteListado',compact('respuestas'));
-    // }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('vistas.comiteNueva');
     }
 
     /**

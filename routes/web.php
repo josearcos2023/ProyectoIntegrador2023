@@ -13,9 +13,7 @@ Route::get('/registroComite', [ProjectController::class, 'registrocomite']);
 Route::get('/registroDocente', [ProjectController::class, 'registrodocente']);
 Route::get('/registroEstudiante', [ProjectController::class, 'registroestudiante']);
 Route::get('/configuracionComite', [ProjectController::class, 'comiteconfig']);
-// Route::get('/listado', [ProjectController::class, 'comiteListado']);
 Route::get('/menu', [ProjectController::class, 'comiteMenu']);
-Route::get('/nuevo', [ProjectController::class, 'comiteNueva']);
 Route::get('/codigosala', [ProjectController::class, 'codigosala']);
 Route::get('/configuracion', [ProjectController::class, 'configuracion']);
 Route::get('/home_alumno', [ProjectController::class, 'home_alumno']);
@@ -27,7 +25,8 @@ Route::get('/menuprofesores', [ProjectController::class, 'menuprofesores']);
 Route::get('/resultados_estudiante', [ProjectController::class, 'resultados_estudiante']);
 
 Route::get('/listado', [PreguntaController::class, 'indexpreguntas']);
-// Route::get('/listado', [PreguntaController::class, 'indexrespuestas']);
+Route::get('/nuevo', [PreguntaController::class, 'create']);
+
 
 Route::middleware([
     'auth:sanctum',

@@ -158,22 +158,22 @@
                                         <div class="col-md-6 px-5">
                                             <select class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
                                                 <option selected>Módulos</option>
-                                                <option selected>1</option>
-                                                <option selected>2</option>
-                                                <option selected>3</option>
-                                                <option selected>4</option>
-                                                <option selected>5</option>
-                                                <option selected>6</option>
-                                                <option selected>7</option>
-                                                <option selected>8</option>
-                                                <option selected>9</option>
-                                                <option selected>10</option>
-                                                <option selected>11</option>
-                                                <option selected>12</option>
-                                                <option selected>13</option>
-                                                <option selected>14</option>
-                                                <option selected>15</option>
-                                                <option selected>16</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
                                               </select>
                                         </div>
                                     </div>

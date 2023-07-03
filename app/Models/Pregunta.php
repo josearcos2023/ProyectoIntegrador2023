@@ -20,6 +20,6 @@ class Pregunta extends Model
 
     public function respuestas()
     {
-        return $this->hasMany(Respuesta::class);
+        return $this->hasMany(Respuesta::class,'id_pregunta','id_pregunta');
     }
 }

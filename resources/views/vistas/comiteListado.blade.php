@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">    <link rel=StyleSheet href="css/estilos.css" type="text/css" media=screen> 
     <title>Comité Menú</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel=StyleSheet href="css/estilos.css" type="text/css" media=screen> 
-</head>.
+</head>
 <body style="background-image: url('images/FondoEspacio5.jpg');">
     <div class="container py-5">
        <!-- CREACION DE CUADRO GRIS PRINCIPAL EXTERNO -->
        <div class="row">
-          <div class="col-md-12 d-flex justify-content-center"">
+          <div class="col-md-12 d-flex justify-content-center">
             <div class="card rounded-4" style="background-color:rgba(205, 205, 227, 0.8);">
                 <div class="row">
                     <div class="col-md-3 div-superior px-4">
@@ -29,7 +29,7 @@
                                      <a href="comiteMenu.html">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
-                                            <img src="images/icono_user.jpg" class="img-fluid img-thumbnail custom-image1" alt="imagen">
+                                            <img src="images/icono_user.jpg" class="img-fluid img-thumbnail custom-image1" style="max-width: 45px;" alt="imagen">
                                         </div>
                                         <div class="col-md-9">
                                             <div class="fw-bold mt-2" style="color: rgb(118, 22, 170);">Panel</div>
@@ -40,7 +40,7 @@
                                      <a href="comiteNueva.html">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
-                                            <img src="images/icono_pregunta.png" class="img-fluid img-thumbnail custom-image2" alt="imagen">
+                                            <img src="images/icono_pregunta.png" class="img-fluid img-thumbnail custom-image2" style="max-width: 45px;" alt="imagen">
                                         </div>
                                         <div class="col-md-9">
                                             <div class="fw-bold mt-2" style="color: rgb(118, 22, 170);">Nueva Pregunta</div>
@@ -51,7 +51,7 @@
                                      <a href="comiteListado.html">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
-                                            <img src="images/icono_menu.png" class="img-fluid img-thumbnail custom-image3" alt="imagen">
+                                            <img src="images/icono_menu.png" class="img-fluid img-thumbnail custom-image3" style="max-width: 45px;" alt="imagen">
                                         </div>
                                         <div class="col-md-9">
                                             <div class="fw-bold mt-2" style="color: rgb(118, 22, 170);">Listado de Preguntas</div>
@@ -62,7 +62,7 @@
                                      <a href="comiteConfi.html">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
-                                            <img src="images/icono_config.png" class="img-fluid img-thumbnail custom-image4" alt="imagen">
+                                            <img src="images/icono_config.png" class="img-fluid img-thumbnail custom-image4" style="max-width: 45px;" alt="imagen">
                                         </div>
                                         <div class="col-md-9">
                                             <div class="fw-bold mt-2" style="color: rgb(118, 22, 170);">Configuración</div>
@@ -73,7 +73,7 @@
                                      <a href="landing.html">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
-                                            <img src="images/icono_net.png" class="img-fluid img-thumbnail custom-image5" alt="imagen">
+                                            <img src="images/icono_net.png" class="img-fluid img-thumbnail custom-image5" style="max-width: 45px;" alt="imagen">
                                         </div>
                                         <div class="col-md-9">
                                             <div class="fw-bold mt-2" style="color: rgb(118, 22, 170);">Quiz.com</div>
@@ -84,7 +84,7 @@
                                      <a href="javascript:history.back()">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
-                                            <img src="images/icono_retroceder.png" class="img-fluid img-thumbnail custom-image6" alt="imagen">
+                                            <img src="images/icono_retroceder.png" class="img-fluid img-thumbnail custom-image6" style="max-width: 45px;" alt="imagen">
                                         </div>
                                         <div class="col-md-9">
                                             <div class="fw-bold mt-2" style="color: rgb(118, 22, 170);">Salir</div>
@@ -136,8 +136,8 @@
                                         <h5 class="mt-3 fw-bold" style="color:#1000c0">Pregunta {{ $item->id_pregunta }}</h5>
                                     </div>
                                     <div class="col-md-2 mx-auto mt-2">
-                                        <img href="{{ url('/editar') }}" src="images/icono_editar.png" class="btn img-fluid img-thumbnail custom-image7" alt="imagen">
-                                        <img href="{{ url('/eliminar') }}" src="images/icono_eliminar.png" class="btn img-fluid img-thumbnail custom-image7" alt="imagen">
+                                        <img href="{{ url('/editar') }}" src="images/icono_editar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
+                                        <img href="{{ url('/eliminar') }}" src="images/icono_eliminar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
                                     </div>
                                     <!-- CREACION DE BORDE DE LA PREGUNTA 1 -->
                                     
@@ -146,23 +146,12 @@
                                     <div class="col-md-10">
                                         
                                         <div class="fs-5 text-center fw-semibold mt-3">{{ $item->pregunta }}</div>
-                                         <!-- Creacion de 2 botones de opciones dentro de la fila de la columna-10 -->
-                                        <div class="row mt-4">
-                                            <div class="col-md-5 mx-auto d-grid">
-                                               <div class="btn btn-primary">Java</div>
-                                            </div>
-                                            <div class="col-md-4 mx-auto d-grid">
-                                               <div class="btn btn-warning">Javascript</div>
-                                            </div>
-                                        </div>
-                                        <!-- Creacion de 2 botones restantes de opciones -->
-                                        <div class="row py-4 ">
-                                            <div class="col-md-5 mx-auto d-grid">
-                                               <div class="btn btn-danger">HTML</div>
-                                            </div>
-                                            <div class="col-md-4 mx-auto d-grid">
-                                               <div class="btn btn-info">Python</div>
-                                            </div>
+                                        <div>
+                                            <ul>
+                                                @foreach ($item->respuestas as $respuesta)
+                                                    <li>{{ $respuesta->respuesta }}</li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                     </div>
    
@@ -177,6 +166,5 @@
           </div>
         </div>
     </div> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> 
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script></body>
 </html>

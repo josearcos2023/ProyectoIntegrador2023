@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Detalles Respuestas
+                        <h4>Detalles preguntas y respuestas
                             <a href="{{ url('/nuevo') }}" class="btn btn-primary float-end">Add</a>
                         </h4>
                     </div>
@@ -32,7 +32,7 @@
                     </div>
 
 
-                    {{-- <div>
+                    <div>
                         <table class="table">
                             <thead>
                               <tr>
@@ -42,7 +42,7 @@
                                 <th scope="col">Ciclo</th>
                                 <th scope="col">Curso</th>
                                 <th scope="col">Módulo</th>
-                                <th scope="col">Acciones</th>
+                                <th scope="col">Respuestas</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -54,13 +54,20 @@
                                     <td>{{ $item->ciclo }}</td>
                                     <td>{{ $item->curso }}</td>
                                     <td>{{ $item->modulo }}</td>
+
+                                    <td>
+                                        <ul>
+                                            @foreach ($item->respuestas as $respuesta)
+                                                <li>{{ $respuesta->respuesta }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
                                 </tr>    
                                 @endforeach
                                 
                             </tbody>
                           </table>
-                    </div> --}}
-                    
+                    </div>
                 </div>
             </div>
         </div>
