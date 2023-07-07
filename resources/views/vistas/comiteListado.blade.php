@@ -143,19 +143,29 @@
                                     
                                     <div class="row g-0 border border-dark mx-auto"></div>
                                     <!-- Creación de espacio de pregunta -->
-                                    <div class="col-md-10">
+                                    <div class="col-md-12">
                                         
                                         <div class="fs-5 text-center fw-semibold mt-3">{{ $item->pregunta }}</div>
                                         <div class="col-md-10 px-5">
-                                            <h5 class="mt-3 fw-bold" style="color:#1000c0">Alternativas</h5>
+                                            <br>
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th><h5 class="mt-3 fw-bold" style="color:#1000c0">Alternativas</h5></th>
+                                                        <th><h5 class="mt-3 fw-bold" style="color:#1000c0">Estado</h5></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($item->respuestas as $respuesta)
+                                                    <tr>
+                                                        <td>{{ $respuesta->respuesta }}</td>
+                                                        <td>{{ $respuesta->estado }}</td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div>
-                                            <ul>
-                                                @foreach ($item->respuestas as $respuesta)
-                                                    <li>{{ $respuesta->respuesta }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
+
                                     </div>
    
                                 </div>

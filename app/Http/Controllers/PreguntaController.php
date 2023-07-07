@@ -15,16 +15,16 @@ class PreguntaController extends Controller
     public function index(): View
     {
         $preguntas = Pregunta::all();
-        $respuestas = Respuesta::pluck('respuesta');
+        $respuestas = Respuesta::pluck('respuesta','estado');
         return view('vistas.comiteListado',compact('preguntas','respuestas'));
     }
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
+    
         return view('vistas.comiteNueva');
     }
 
