@@ -12,7 +12,7 @@ class Especialidad extends Model
     use HasFactory;
     protected $table = 'especialidades';
     protected $fillable = [
-        'nombre'
+        'especialidad'
     ];
 
     public function pregunta(): HasMany

@@ -137,7 +137,13 @@
                                     </div>
                                     <div class="col-md-2 mx-auto mt-2">
                                         <img href="{{ url('/editar') }}" src="images/icono_editar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
-                                        <img href="{{ url('/eliminar') }}" src="images/icono_eliminar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
+                                        <form action="{{ route('nuevo.destroy',$item->id_pregunta) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">  
+                                                <img src="images/icono_eliminar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
+                                            </button>
+                                        </form>
                                     </div>
                                     <!-- CREACION DE BORDE DE LA PREGUNTA 1 -->
                                     

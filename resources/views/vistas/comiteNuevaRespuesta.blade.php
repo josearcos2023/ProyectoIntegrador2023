@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="col-md-9 d-flex">
-                            <form action="{{ route('nuevo.store') }}" class="form-control" method="post">
+                            <form action="{{ route('pregunta.store') }}" class="form-control" method="post">
                                 @csrf
                             <div class="card flex-fill">
                                 <div class="card-body">
@@ -143,12 +143,12 @@
                                         <h5 class="card-title fw-bold" style="color:#1000c0">Correcta</h5>
                                     </div>
                                     <div class="col-md-3">
-                                        <select class="form-select" style="background-color:rgb(219, 219, 219);" aria-label="Default select example">
+                                        <select name="estado" class="form-select" style="background-color:rgb(219, 219, 219);" aria-label="Default select example">
                                             <option selected>Correct</option>
-                                            <option value="1">A</option>
-                                            <option value="2">B</option>
-                                            <option value="2">C</option>
-                                            <option value="3">D</option>
+                                            <option value=1>A</option>
+                                            <option value=2>B</option>
+                                            <option value=3>C</option>
+                                            <option value=4>D</option>
                                         </select>
                                     </div>
                                 </div>

@@ -28,6 +28,8 @@ Route::get('/resultados_estudiante', [ProjectController::class, 'resultados_estu
 Route::get('/listado', [PreguntaController::class,'index'])->name('preguntas.listado');
 Route::get('/nuevo', [PreguntaController::class,'create']);
 Route::post('/nuevo', [PreguntaController::class,'store'])->name('nuevo.store');
+Route::delete('/{id_pregunta}/nuevo', [PreguntaController::class,'destroy'])->name('nuevo.destroy');
+
 Route::get('/respuesta',[RespuestaController::class,'create'])->name('preguntas.create');
 Route::post('/respuesta',[RespuestaController::class,'store'])->name('pregunta.store');
 

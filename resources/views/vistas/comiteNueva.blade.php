@@ -113,25 +113,21 @@
                                 <div class="row">
                                     <!-- CREACION DE SELECT DE TEMAS DE PREGUNTAS -->
                                     <div class="col-md-6 px-5">
-                                        <select id="especialidades" name="especialidades" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
+                                        <select id="especialidad" name="especialidad" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
                                             <option>Especialidades</option>
-                                            <option value="Redes y comunicaciones">Redes y comunicaciones</option>
-                                            <option value="Diseño y Desarrollo de Software">Diseño y Desarrollo de Software</option>
-                                            <option value="Diseño y Desarrollo de Videojuegos">Diseño y Desarrollo de Videojuegos</option>
-                                            <option value="Big Data">Big Data</option>
+                                            @foreach ($especialidad as $especialidades)
+                                            <option value={{ $especialidades->id_especialidad }}>{{ $especialidades->especialidad }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <!-- CREACION DE SELECT DE TIPOS DE PREGUNTAS -->
                                     <div class="col-md-6 px-5">
                                         <select  id="ciclo" name="ciclo" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
                                             <option selected>Ciclo</option>
-                                            <option value="1"> I </option>
-                                            <option value="2"> II</option>
-                                            <option value="3"> III </option>
-                                            <option value="4"> IV </option>
-                                            <option value="5"> V </option>
-                                            <option value="6"> VI </option>
-                                          </select>
+                                            @foreach ($ciclo as $ciclo)
+                                            <option value={{ $ciclo->id_ciclo}}> {{ $ciclo->ciclo}} </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                      <!-- CREANDO TITULOS DE TEMA Y TIPO DE PREGUNTA  -->
@@ -147,35 +143,19 @@
                                         <!-- CREACION DE SELECT DE TEMAS DE PREGUNTAS -->
                                         <div class="col-md-6 px-5">
                                             <select id="curso" name="curso" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
-                                                <option selected>Cursos</option>
-                                                <option value="Estructuras de Datos y Algoritmos">Estructuras de Datos y Algoritmos</option>
-                                                <option value="Bases de Datos Avanzadas">Bases de Datos Avanzadas</option>
-                                                <option value="Sistemas Operativos">Sistemas Operativos</option>
-                                                <option value="Ingeniería de Requerimiento de Software">Ingeniería de Requerimiento de Software</option>
-                                                <option value="Mejora y Calidad Continua">Mejora y Calidad Continua</option>
-                                                <option value="Desarrollo de Aplicaciones en Internet">Desarrollo de Aplicaciones en Internet</option>
+                                                <option selected>Curso</option>
+                                                @foreach ($curso as $cursos)
+                                                <option value={{ $cursos->id_curso }}>{{ $cursos->curso }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <!-- CREACION DE SELECT DE TIPOS DE PREGUNTAS -->
                                         <div class="col-md-6 px-5">
                                             <select id="modulo" name="modulo" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
                                                 <option selected>Módulos</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
+                                                @foreach ($modulo as $modulos)
+                                                <option value={{ $modulos->id_modulo }}>{{ $modulos->modulo }}</option>
+                                                @endforeach
                                               </select>
                                         </div>
                                     </div>

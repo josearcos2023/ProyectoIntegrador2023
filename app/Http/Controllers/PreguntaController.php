@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ciclo;
+use App\Models\Curso;
+use App\Models\Especialidad;
+use App\Models\Modulo;
 use App\Models\Pregunta;
 use App\Models\Respuesta;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PreguntaController extends Controller
 {
@@ -24,8 +29,11 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-    
-        return view('vistas.comiteNueva');
+        $especialidad=Especialidad::all();
+        $curso=Curso::all();
+        $modulo=Modulo::all();
+        $ciclo=Ciclo::all();
+        return view('vistas.comiteNueva',compact('especialidad','curso','modulo','ciclo'));
     }
 
     /**
@@ -35,14 +43,20 @@ class PreguntaController extends Controller
     {
         $request->validate([
             'pregunta'=>'required',
-            'especialidades'=>'required',
+            'especialidad'=>'required',
             'ciclo'=>'required',
             'curso'=>'required',
             'modulo'=>'required'
         ]);
-        $pregunta = $request->all();
 
-        Pregunta::create($pregunta);
+        $pregunta = $request->pregunta;
+        $especialidad = $request->especialidad;
+        $ciclo = $request->ciclo;
+        $curso = $request->curso;
+        $modulo = $request->modulo;
+
+        DB::insert('insert into preguntas (pregunta,id_especialidad,id_ciclo,id_curso, id_modulo) 
+        values (?, ?, ?, ?, ?)', [$pregunta, $especialidad, $ciclo, $curso, $modulo]);
 
         return redirect()->route('preguntas.create')->with('success','Pregunta ingresada');
         
@@ -75,9 +89,10 @@ class PreguntaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Pregunta $id_pregunta)
     {
-        Pregunta::destroy($id);
-        return redirect('vistas.comiteListado')->with('flash_message','Pregunta eliminada');
+        $deleted=DB::table('preguntas')->where('id_pregunta','=',$id_pregunta)->delete();
+
+        return redirect('/listado');
     }
 }
