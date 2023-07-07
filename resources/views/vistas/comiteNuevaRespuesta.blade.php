@@ -101,94 +101,55 @@
                                 <div class="card-body">
                                      <h2 class="card-title mt-2 fw-bold" style="color:#1000c0">Complete la pregunta</h2>
                                 </div>
-                                <!-- CREANDO TITULOS DE TEMA Y TIPO DE PREGUNTA  -->
-                                <div class="row">
-                                    <div class="col-md-6 px-5">
-                                       <h5 class="card-title mt-3 fw-bold" style="color:#1000c0">Especialidad:</h5>
+                                <!-- CREACION DE ESTRUCTURA DE OPCION A CON SU INPUT -->
+                                <div class="row px-5 mt-4">
+                                    <div class="col-md-2 px-4 mx-auto mt-1">
+                                        <h5 class="card-title fw-bold" style="color:#1000c0">Opción A</h5>
                                     </div>
-                                    <div class="col-md-6 px-5">
-                                       <h5 class="card-title mt-3 fw-bold" style="color:#1000c0">Ciclo:</h5>
+                                    <div class="col-md-10 mx-auto">
+                                        <input name="respuesta1" type="text" class="form-control" style="background-color:rgb(219, 219, 219);" id="exampleFormControlInput1" placeholder="Ingresa la alternativa de pregunta A">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <!-- CREACION DE SELECT DE TEMAS DE PREGUNTAS -->
-                                    <div class="col-md-6 px-5">
-                                        <select id="especialidades" name="especialidades" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
-                                            <option>Especialidades</option>
-                                            <option value="Redes y comunicaciones">Redes y comunicaciones</option>
-                                            <option value="Diseño y Desarrollo de Software">Diseño y Desarrollo de Software</option>
-                                            <option value="Diseño y Desarrollo de Videojuegos">Diseño y Desarrollo de Videojuegos</option>
-                                            <option value="Big Data">Big Data</option>
+                                <!-- CREACION DE ESTRUCTURA DE OPCION B CON SU INPUT -->
+                                <div class="row px-5 mt-3">
+                                    <div class="col-md-2 px-4 mt-1">
+                                        <h5 class="card-title fw-bold" style="color:#1000c0">Opción B</h5>
+                                    </div>
+                                    <div class="col-md-10 mx-auto">
+                                        <input name="respuesta2" type="text" class="form-control" style="background-color:rgb(219, 219, 219);" id="exampleFormControlInput1" placeholder="Ingresa la alternativa de pregunta B">
+                                    </div>
+                                </div>
+                                <!-- CREACION DE ESTRUCTURA DE OPCION C CON SU INPUT -->
+                                <div class="row px-5 mt-3">
+                                    <div class="col-md-2 px-4 mt-1">
+                                        <h5 class="card-title fw-bold" style="color:#1000c0">Opción C</h5>
+                                    </div>
+                                    <div class="col-md-10 mx-auto">
+                                        <input name="respuesta3" type="text" class="form-control" style="background-color:rgb(219, 219, 219);" id="exampleFormControlInput1" placeholder="Ingresa la alternativa de pregunta C">
+                                    </div>
+                                </div>
+                                <!-- CREACION DE ESTRUCTURA DE OPCION D CON SU INPUT -->
+                                <div class="row px-5 mt-3">
+                                    <div class="col-md-2 px-4 mt-1">
+                                        <h5 class="card-title fw-bold" style="color:#1000c0">Opción D</h5>
+                                    </div>
+                                    <div class="col-md-10 mx-auto">
+                                        <input name="respuesta4" type="text" class="form-control" style="background-color:rgb(219, 219, 219);" id="exampleFormControlInput1" placeholder="Ingresa la alternativa de pregunta D">
+                                    </div>
+                                </div>
+                                <!-- CREACION DE ESTRUCTURA DE SELECCION DE RESPUESTA CORRECTA -->
+                                <div class="row px-5 mt-3">
+                                    <div class="col-md-2 px-4 mt-1">
+                                        <h5 class="card-title fw-bold" style="color:#1000c0">Correcta</h5>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-select" style="background-color:rgb(219, 219, 219);" aria-label="Default select example">
+                                            <option selected>Correct</option>
+                                            <option value="1">A</option>
+                                            <option value="2">B</option>
+                                            <option value="2">C</option>
+                                            <option value="3">D</option>
                                         </select>
-                                    </div>
-                                    <!-- CREACION DE SELECT DE TIPOS DE PREGUNTAS -->
-                                    <div class="col-md-6 px-5">
-                                        <select  id="ciclo" name="ciclo" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
-                                            <option selected>Ciclo</option>
-                                            <option value="1"> I </option>
-                                            <option value="2"> II</option>
-                                            <option value="3"> III </option>
-                                            <option value="4"> IV </option>
-                                            <option value="5"> V </option>
-                                            <option value="6"> VI </option>
-                                          </select>
-                                    </div>
-                                </div>
-                                     <!-- CREANDO TITULOS DE TEMA Y TIPO DE PREGUNTA  -->
-                                     <div class="row">
-                                        <div class="col-md-6 px-5">
-                                           <h5 class="card-title mt-3 fw-bold" style="color:#1000c0">Cursos:</h5>
-                                        </div>
-                                        <div class="col-md-6 px-5">
-                                           <h5 class="card-title mt-3 fw-bold" style="color:#1000c0"> Módulo:</h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <!-- CREACION DE SELECT DE TEMAS DE PREGUNTAS -->
-                                        <div class="col-md-6 px-5">
-                                            <select id="curso" name="curso" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
-                                                <option selected>Cursos</option>
-                                                <option value="Estructuras de Datos y Algoritmos">Estructuras de Datos y Algoritmos</option>
-                                                <option value="Bases de Datos Avanzadas">Bases de Datos Avanzadas</option>
-                                                <option value="Sistemas Operativos">Sistemas Operativos</option>
-                                                <option value="Ingeniería de Requerimiento de Software">Ingeniería de Requerimiento de Software</option>
-                                                <option value="Mejora y Calidad Continua">Mejora y Calidad Continua</option>
-                                                <option value="Desarrollo de Aplicaciones en Internet">Desarrollo de Aplicaciones en Internet</option>
-                                            </select>
-                                        </div>
-                                        <!-- CREACION DE SELECT DE TIPOS DE PREGUNTAS -->
-                                        <div class="col-md-6 px-5">
-                                            <select id="modulo" name="modulo" class="form-select" aria-label="Default select example" style="background-color:rgb(219, 219, 219);">
-                                                <option selected>Módulos</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                              </select>
-                                        </div>
-                                    </div>
-                                <!-- CREACION TITULO DE TEXTAREA PREGUNTA -->
-                                <div class="row">
-                                    <div class="col-md-12 px-5">
-                                        <h5 class="card-title mt-4 fw-bold" style="color:#1000c0"> Pregunta:</h5>
-                                    </div>
-                                </div>
-                                <!-- CREACION DE TEXT AREA PARA INSERCION DE LA NUEVA PREGUNTA -->
-                                <div class="row">
-                                    <div class="col-md-12 px-5" >
-                                        <input type="textarea" class="form-control" id="pregunta" name="pregunta" rows="3" style="background-color:rgb(219, 219, 219);" placeholder="Ingrese su pregunta">
                                     </div>
                                 </div>
                                 <div class="row mx-auto py-3">

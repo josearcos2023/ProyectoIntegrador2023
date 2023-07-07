@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RespuestaController;
 
 Route::get('/',[HomeController::class,'landing']);
 
@@ -12,8 +13,8 @@ Route::get('/registro_tipo', [ProjectController::class, 'registro_tipo']);
 Route::get('/registroComite', [ProjectController::class, 'registrocomite']);
 Route::get('/registroDocente', [ProjectController::class, 'registrodocente']);
 Route::get('/registroEstudiante', [ProjectController::class, 'registroestudiante']);
-Route::get('/configuracionComite', [ProjectController::class, 'comiteconfig']);
-Route::get('/menu', [ProjectController::class, 'comiteMenu']);
+Route::get('/configuracionComite', [ProjectController::class, 'comiteconfig']);//Configuracion preguntas respuestas
+Route::get('/menu', [ProjectController::class, 'comiteMenu']); //Panel de preguntas
 Route::get('/codigosala', [ProjectController::class, 'codigosala']);
 Route::get('/configuracion', [ProjectController::class, 'configuracion']);
 Route::get('/home_alumno', [ProjectController::class, 'home_alumno']);
@@ -24,8 +25,11 @@ Route::get('/jugar', [ProjectController::class, 'jugar']);
 Route::get('/menuprofesores', [ProjectController::class, 'menuprofesores']);
 Route::get('/resultados_estudiante', [ProjectController::class, 'resultados_estudiante']);
 
-Route::get('/listado', [PreguntaController::class, 'indexpreguntas']);
-Route::get('/nuevo', [PreguntaController::class, 'create']);
+Route::get('/listado', [PreguntaController::class,'index'])->name('preguntas.listado');
+Route::get('/nuevo', [PreguntaController::class,'create']);
+Route::post('/nuevo', [PreguntaController::class,'store'])->name('nuevo.store');
+Route::get('/respuesta',[RespuestaController::class,'create'])->name('preguntas.create');
+Route::post('/respuesta',[RespuestaController::class,'store'])->name('pregunta.store');
 
 
 Route::middleware([

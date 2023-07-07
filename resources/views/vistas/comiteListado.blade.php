@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="asset('css/styles.css')">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">    <link rel=StyleSheet href="css/estilos.css" type="text/css" media=screen> 
     <title>Comité Menú</title>
 </head>
@@ -26,7 +26,7 @@
                             <div class="card flex-fill">
                                 <div class="card-body">
                                      <!-- CREACION DE BOTON PANEL -->
-                                     <a href="comiteMenu.html">
+                                     <a href="{{ url('/menu') }}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_user.jpg" class="img-fluid img-thumbnail custom-image1" style="max-width: 45px;" alt="imagen">
@@ -37,7 +37,7 @@
                                      </div>
                                      </a>
                                      <!-- CREACION DE BOTON NUEVA PREGUNTA -->
-                                     <a href="comiteNueva.html">
+                                     <a href="{{ url('/nuevo') }}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_pregunta.png" class="img-fluid img-thumbnail custom-image2" style="max-width: 45px;" alt="imagen">
@@ -48,7 +48,7 @@
                                      </div>
                                      </a>
                                      <!-- CREACION DE BOTON LISTADO DE PREGUNTAS -->
-                                     <a href="comiteListado.html">
+                                     <a href="{{ url('/listado') }}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_menu.png" class="img-fluid img-thumbnail custom-image3" style="max-width: 45px;" alt="imagen">
@@ -59,7 +59,7 @@
                                      </div>
                                      </a>
                                      <!-- CREACION DE BOTON CONFIGURACION DE PREGUNTAS -->
-                                     <a href="comiteConfi.html">
+                                     <a href="{{url('/configuracionComite')}}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_config.png" class="img-fluid img-thumbnail custom-image4" style="max-width: 45px;" alt="imagen">
@@ -70,7 +70,7 @@
                                      </div>
                                      </a>
                                      <!-- CREACION DE BOTON DE QUIZ.COM -->
-                                     <a href="landing.html">
+                                     <a href="{{url('/')}}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_net.png" class="img-fluid img-thumbnail custom-image5" style="max-width: 45px;" alt="imagen">
@@ -146,6 +146,9 @@
                                     <div class="col-md-10">
                                         
                                         <div class="fs-5 text-center fw-semibold mt-3">{{ $item->pregunta }}</div>
+                                        <div class="col-md-10 px-5">
+                                            <h5 class="mt-3 fw-bold" style="color:#1000c0">Alternativas</h5>
+                                        </div>
                                         <div>
                                             <ul>
                                                 @foreach ($item->respuestas as $respuesta)

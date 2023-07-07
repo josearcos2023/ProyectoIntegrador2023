@@ -26,7 +26,7 @@
                             <div class="card flex-fill">
                                 <div class="card-body">
                                      <!-- CREACION DE BOTON PANEL -->
-                                     <a href="comiteMenu.html">
+                                     <a href="{{ url('/menu') }}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_user.jpg" class="img-fluid img-thumbnail custom-image1" alt="imagen">
@@ -37,7 +37,7 @@
                                      </div>
                                      </a>
                                      <!-- CREACION DE BOTON NUEVA PREGUNTA -->
-                                     <a href="comiteNueva.html">
+                                     <a href="{{ url('/nuevo') }}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_pregunta.png" class="img-fluid img-thumbnail custom-image2" alt="imagen">
@@ -48,7 +48,7 @@
                                      </div>
                                      </a>
                                      <!-- CREACION DE BOTON LISTADO DE PREGUNTAS -->
-                                     <a href="comiteListado.html">
+                                     <a href="{{ url('/listado') }}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_menu.png" class="img-fluid img-thumbnail custom-image3" alt="imagen">
@@ -70,7 +70,7 @@
                                      </div>
                                      </a>
                                      <!-- CREACION DE BOTON DE QUIZ.COM -->
-                                     <a href="landing.html">
+                                     <a href="{{url('/')}}">
                                      <div class="row g-0 mt-3">
                                         <div class="col-md-3">
                                             <img src="images/icono_net.png" class="img-fluid img-thumbnail custom-image5" alt="imagen">

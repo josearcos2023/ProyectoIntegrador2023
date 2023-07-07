@@ -12,10 +12,10 @@ class PreguntaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function indexpreguntas(): View
+    public function index(): View
     {
-        $respuestas = Respuesta::pluck('id_respuesta','respuesta');
         $preguntas = Pregunta::all();
+        $respuestas = Respuesta::pluck('respuesta');
         return view('vistas.comiteListado',compact('preguntas','respuestas'));
     }
 
@@ -33,7 +33,19 @@ class PreguntaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'pregunta'=>'required',
+            'especialidades'=>'required',
+            'ciclo'=>'required',
+            'curso'=>'required',
+            'modulo'=>'required'
+        ]);
+        $pregunta = $request->all();
+
+        Pregunta::create($pregunta);
+
+        return redirect()->route('preguntas.create')->with('success','Pregunta ingresada');
+        
     }
 
     /**
@@ -65,6 +77,7 @@ class PreguntaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Pregunta::destroy($id);
+        return redirect('vistas.comiteListado')->with('flash_message','Pregunta eliminada');
     }
 }

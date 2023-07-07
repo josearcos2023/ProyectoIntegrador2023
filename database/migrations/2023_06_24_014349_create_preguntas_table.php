@@ -11,14 +11,29 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Schema::create('preguntas', function (Blueprint $table) {
+        //     $table->id('id_pregunta');
+        //     $table->string('pregunta');
+        //     $table->string('especialidades');
+        //     $table->string('ciclo');
+        //     $table->string('curso');
+        //     $table->string('modulo');
+        //     $table->string('estado');
+        //     $table->timestamps();
+        // });
+
         Schema::create('preguntas', function (Blueprint $table) {
             $table->id('id_pregunta');
             $table->string('pregunta');
-            $table->string('especialidades');
-            $table->string('ciclo');
-            $table->string('curso');
-            $table->string('modulo');
-            $table->string('estado');
+            $table->string('estado')->nullable(true);
+            $table->unsignedBigInteger('id_especialidad')->unsigned();
+            $table->foreign('id_especialidad')->references('id_especialidad')->on('especialidades')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_ciclo')->unsigned();
+            $table->foreign('id_ciclo')->references('id_ciclo')->on('ciclo')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_curso')->unsigned();
+            $table->foreign('id_curso')->references('id_curso')->on('curso')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_modulo')->unsigned();
+            $table->foreign('id_modulo')->references('id_modulo')->on('modulo')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,4 +44,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('preguntas');
     }
+
+    
 };
