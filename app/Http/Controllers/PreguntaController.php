@@ -109,7 +109,7 @@ class PreguntaController extends Controller
         $modulos = Modulo::all();
         // dd($preguntasJoin);
         // dd($pregunta);
-        dd($estadosArray);
+        // dd($estadosArray);
 
         return view('vistas.comiteEditar', ['pregunta' => $pregunta,'respuesta' => $respuesta] ,compact('preg1','preg2','preg3','preg4','preguntasJoin', 'especialidades','cursos','ciclos','modulos'));
     }
