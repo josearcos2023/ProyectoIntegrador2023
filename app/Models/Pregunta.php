@@ -22,6 +22,7 @@ class Pregunta extends Model
     // {
     //     return $this->hasMany(Respuesta::class,'id_pregunta','id_pregunta');
     // }
+    protected $primaryKey = 'id_pregunta';
 
     protected $fillable = [
         'pregunta',

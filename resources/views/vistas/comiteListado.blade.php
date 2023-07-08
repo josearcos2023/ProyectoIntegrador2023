@@ -136,13 +136,15 @@
                                         <h5 class="mt-3 fw-bold" style="color:#1000c0">Pregunta {{ $item->id_pregunta }}</h5>
                                     </div>
                                     <div class="col-md-2 mx-auto mt-2">
-                                        <img href="{{ url('/editar') }}" src="images/icono_editar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
-                                        <form action="{{ route('nuevo.destroy',$item->id_pregunta) }}" method="post">
+                                        <form action="{{ route('nuevo.edit',['pregunta' => $item]) }}">
                                             @csrf
-                                            @method('DELETE')
-                                            <button type="submit">  
-                                                <img src="images/icono_eliminar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
-                                            </button>
+                                            <input type="image" src="images/icono_editar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
+                                        </form>
+                                        <form action="{{ route('nuevo.destroy',['id_pregunta' => $item->id_pregunta]) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <input type="image" src="images/icono_eliminar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
+                                        
                                         </form>
                                     </div>
                                     <!-- CREACION DE BORDE DE LA PREGUNTA 1 -->

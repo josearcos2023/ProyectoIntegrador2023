@@ -73,17 +73,38 @@ class PreguntaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pregunta $pregunta)
     {
-        //
+        $preguntas = Pregunta::all();
+        $respuestas = Respuesta::all();
+        $especialidad = Especialidad::all();
+        $curso = Curso::all();
+        $ciclo = Ciclo::all();
+        $modulo = Modulo::all();
+        return view('vistas.comiteEditar');
+        // , compact('preguntas','respuestas','especialidad','curso','ciclo','modulo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id_pregunta)
     {
-        //
+        
+        // $id_pregunta=$request->id_pregunta;
+        // $especialidad =$request->especialidad;
+        // $ciclo =$request->ciclo; 
+        // $curso =$request->curso;
+        // $modulo =$request->modulo;
+
+        // $preguntas =DB::table('preguntas')
+        //             ->select('preguntas.pregunta','respuestas.respuesta','respuestas.estado')
+        //             ->join('respuestas','preguntas.id_pregunta','=','respuestas.id_pregunta')
+        //             ->where('id_especialidad','=',$especialidad)
+        //             ->where('id_ciclo','=',$ciclo)
+        //             ->where('id_curso','=',$curso)
+        //             ->where('id_modulo','=',$modulo)
+        //             ->get();
     }
 
     /**
@@ -91,8 +112,7 @@ class PreguntaController extends Controller
      */
     public function destroy(Pregunta $id_pregunta)
     {
-        $deleted=DB::table('preguntas')->where('id_pregunta','=',$id_pregunta)->delete();
-
+        $id_pregunta->delete();
         return redirect('/listado');
     }
 }
