@@ -90,19 +90,17 @@ class PreguntaController extends Controller
 
         $respuestasArray = [];
 
-        foreach ($preguntasJoin as $pregunta) {
+        foreach ($preguntasJoin as $pregunta) 
+        {
             $respuestasArray[] = $pregunta->respuesta;
         }
         list($preg1, $preg2, $preg3, $preg4) = $respuestasArray;
 
         $estadosArray = [];
-        foreach ($preguntasJoin as $estado) {
+        foreach ($preguntasJoin as $estado) 
+        {
             $estadosArray[] = $estado->estado;
         }
-
-
-        
-
         $especialidades = Especialidad::all();
         $cursos = Curso::all();
         $ciclos = Ciclo::all();
@@ -117,8 +115,26 @@ class PreguntaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, Pregunta $pregunta)
     {
+        $pregunta->pregunta = $request->pregunta;
+        $pregunta->id_especialidad = $request->id_especialidad;
+        $pregunta->id_curso = $request->id_curso;
+        $pregunta->id_ciclo = $request->id_ciclo;
+        $pregunta->id_modulo = $request->id_modulo;
+
+        $pregunta->save();
+
+        $respuestas = Respuesta::where('id_pregunta', $pregunta->id_pregunta)->get();
+        foreach ($respuestas as $index => $respuesta) 
+        {
+            $respuesta->respuesta = $request->input('respuesta' . ($index + 1));
+            $respuesta->estado = $request->input('estado' . ($index + 1));
+            $respuesta->save();
+        }
+
+        return redirect()->route('preguntas.listado')->with('success','Pregunta ingresada');
+
 
     }
 

@@ -30,7 +30,7 @@ Route::get('/nuevo', [PreguntaController::class,'create']);
 Route::post('/nuevo', [PreguntaController::class,'store'])->name('nuevo.store');
 Route::delete('/{id_pregunta}/nuevo', [PreguntaController::class,'destroy'])->name('nuevo.destroy');
 Route::post('/{pregunta}/edit', [PreguntaController::class,'edit'])->name('nuevo.edit');
-Route::put('/{id_pregunta}/update', [PreguntaController::class,'update'])->name('nuevo.update');
+Route::put('/update', [PreguntaController::class,'update'])->name('nuevo.update');
 
 
 Route::get('/respuesta',[RespuestaController::class,'create'])->name('preguntas.create');

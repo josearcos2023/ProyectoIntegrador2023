@@ -96,9 +96,9 @@
                             </div>
                         </div>
                         <div class="col-md-9 d-flex">
-                            <form action="" class="form-control" method="post">
+                            <form action="{{ route('nuevo.update') }}" class="form-control" method="post">
                                 @csrf
-                                @method('post')
+                                @method('put')
                             <div class="card flex-fill">
                                 <div class="card-body">
                                      <h2 class="card-title mt-2 fw-bold" style="color:#1000c0">Complete la pregunta</h2>
