@@ -73,38 +73,52 @@ class PreguntaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pregunta $pregunta)
+    public function edit(Pregunta $pregunta, Respuesta $respuesta)
     {
-        $preguntas = Pregunta::all();
-        $respuestas = Respuesta::all();
-        $especialidad = Especialidad::all();
-        $curso = Curso::all();
-        $ciclo = Ciclo::all();
-        $modulo = Modulo::all();
-        return view('vistas.comiteEditar');
-        // , compact('preguntas','respuestas','especialidad','curso','ciclo','modulo'));
+        $id_pregunta=$pregunta->id_pregunta;
+        $especialidad =$pregunta->especialidad;
+        $ciclo =$pregunta->ciclo; 
+        $curso =$pregunta->curso;
+        $modulo =$pregunta->modulo;
+
+        $preguntasJoin=DB::table('preguntas')
+            ->select('preguntas.pregunta','respuestas.respuesta','respuestas.estado')
+            ->join('respuestas','preguntas.id_pregunta','=','respuestas.id_pregunta')
+            ->where('preguntas.id_pregunta','=',$id_pregunta)
+            ->get();
+
+        $respuestasArray = [];
+
+        foreach ($preguntasJoin as $pregunta) {
+            $respuestasArray[] = $pregunta->respuesta;
+        }
+
+        list($preg1, $preg2, $preg3, $preg4) = $respuestasArray;
+
+        $estadoJoin=DB::table('preguntas')
+            ->select('preguntas.pregunta','respuestas.id_respuesta', 'respuestas.respuesta','respuestas.estado')
+            ->join('respuestas','preguntas.id_pregunta','=','respuestas.id_pregunta')
+            ->where('preguntas.id_pregunta','=',$id_pregunta)
+            ->where('respuestas.estado','=','1')
+            ->get();
+
+        
+
+        $especialidades = Especialidad::all();
+        $cursos = Curso::all();
+        $ciclos = Ciclo::all();
+        $modulos = Modulo::all();
+        // dd($preguntasJoin);
+        dd($estadoJoin);
+        return view('vistas.comiteEditar', ['pregunta' => $pregunta,'respuesta' => $respuesta] ,compact('preg1','preg2','preg3','preg4','preguntasJoin', 'especialidades','cursos','ciclos','modulos'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id_pregunta)
+    public function update(Request $request)
     {
-        
-        // $id_pregunta=$request->id_pregunta;
-        // $especialidad =$request->especialidad;
-        // $ciclo =$request->ciclo; 
-        // $curso =$request->curso;
-        // $modulo =$request->modulo;
 
-        // $preguntas =DB::table('preguntas')
-        //             ->select('preguntas.pregunta','respuestas.respuesta','respuestas.estado')
-        //             ->join('respuestas','preguntas.id_pregunta','=','respuestas.id_pregunta')
-        //             ->where('id_especialidad','=',$especialidad)
-        //             ->where('id_ciclo','=',$ciclo)
-        //             ->where('id_curso','=',$curso)
-        //             ->where('id_modulo','=',$modulo)
-        //             ->get();
     }
 
     /**

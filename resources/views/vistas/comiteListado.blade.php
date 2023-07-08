@@ -136,7 +136,7 @@
                                         <h5 class="mt-3 fw-bold" style="color:#1000c0">Pregunta {{ $item->id_pregunta }}</h5>
                                     </div>
                                     <div class="col-md-2 mx-auto mt-2">
-                                        <form action="{{ route('nuevo.edit',['pregunta' => $item]) }}">
+                                        <form action="{{ route('nuevo.edit',['pregunta' => $item]) }}" method="POST">
                                             @csrf
                                             <input type="image" src="images/icono_editar.png" class="btn img-fluid img-thumbnail custom-image7" style="max-width: 45px;" alt="imagen">
                                         </form>
