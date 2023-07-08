@@ -76,14 +76,15 @@ class PreguntaController extends Controller
     public function edit(Pregunta $pregunta, Respuesta $respuesta)
     {
         $id_pregunta=$pregunta->id_pregunta;
-        $especialidad =$pregunta->especialidad;
-        $ciclo =$pregunta->ciclo; 
-        $curso =$pregunta->curso;
-        $modulo =$pregunta->modulo;
 
         $preguntasJoin=DB::table('preguntas')
-            ->select('preguntas.pregunta','respuestas.respuesta','respuestas.estado')
+            ->select('preguntas.pregunta','respuestas.respuesta','respuestas.estado','preguntas.id_especialidad','especialidades.especialidad',
+                     'preguntas.id_curso','cursos.curso','preguntas.id_ciclo','ciclos.ciclo','preguntas.id_modulo','modulos.modulo')
             ->join('respuestas','preguntas.id_pregunta','=','respuestas.id_pregunta')
+            ->join('especialidades','especialidades.id_especialidad','=','preguntas.id_especialidad')
+            ->join('ciclos','ciclos.id_ciclo','=','preguntas.id_ciclo')
+            ->join('modulos','modulos.id_modulo','=','preguntas.id_modulo')
+            ->join('cursos','cursos.id_curso','=','preguntas.id_curso')
             ->where('preguntas.id_pregunta','=',$id_pregunta)
             ->get();
 
@@ -92,15 +93,13 @@ class PreguntaController extends Controller
         foreach ($preguntasJoin as $pregunta) {
             $respuestasArray[] = $pregunta->respuesta;
         }
-
         list($preg1, $preg2, $preg3, $preg4) = $respuestasArray;
 
-        $estadoJoin=DB::table('preguntas')
-            ->select('preguntas.pregunta','respuestas.id_respuesta', 'respuestas.respuesta','respuestas.estado')
-            ->join('respuestas','preguntas.id_pregunta','=','respuestas.id_pregunta')
-            ->where('preguntas.id_pregunta','=',$id_pregunta)
-            ->where('respuestas.estado','=','1')
-            ->get();
+        $estadosArray = [];
+        foreach ($preguntasJoin as $estado) {
+            $estadosArray[] = $estado->estado;
+        }
+
 
         
 
@@ -109,7 +108,9 @@ class PreguntaController extends Controller
         $ciclos = Ciclo::all();
         $modulos = Modulo::all();
         // dd($preguntasJoin);
-        dd($estadoJoin);
+        // dd($pregunta);
+        dd($estadosArray);
+
         return view('vistas.comiteEditar', ['pregunta' => $pregunta,'respuesta' => $respuesta] ,compact('preg1','preg2','preg3','preg4','preguntasJoin', 'especialidades','cursos','ciclos','modulos'));
     }
 

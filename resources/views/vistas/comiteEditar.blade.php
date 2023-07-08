@@ -215,7 +215,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <select name="estado" class="form-select" style="background-color:rgb(219, 219, 219);" aria-label="Default select example">
-                                            <option selected>Correct</option>
+                                            <option selected value={{  }}>Correct</option>
                                             <option value=1>A</option>
                                             <option value=2>B</option>
                                             <option value=3>C</option>
