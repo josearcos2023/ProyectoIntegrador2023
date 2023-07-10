@@ -32,7 +32,6 @@ Route::delete('/{id_pregunta}/nuevo', [PreguntaController::class,'destroy'])->na
 Route::post('/{pregunta}/edit', [PreguntaController::class,'edit'])->name('nuevo.edit');
 Route::put('/update', [PreguntaController::class,'update'])->name('nuevo.update');
 
-
 Route::get('/respuesta',[RespuestaController::class,'create'])->name('preguntas.create');
 Route::post('/respuesta',[RespuestaController::class,'store'])->name('pregunta.store');
 

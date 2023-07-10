@@ -118,12 +118,14 @@ class PreguntaController extends Controller
     public function update(Request $request, Pregunta $pregunta)
     {
         $pregunta->pregunta = $request->pregunta;
-        $pregunta->id_especialidad = $request->id_especialidad;
+        $especialidad=$request->id_especialidad;
+        // $pregunta->id_especialidad = $request->id_especialidad;
+        $pregunta->id_especialidad = $especialidad;
         $pregunta->id_curso = $request->id_curso;
         $pregunta->id_ciclo = $request->id_ciclo;
         $pregunta->id_modulo = $request->id_modulo;
 
-        $pregunta->save();
+        $pregunta->update();
 
         $respuestas = Respuesta::where('id_pregunta', $pregunta->id_pregunta)->get();
         foreach ($respuestas as $index => $respuesta) 
